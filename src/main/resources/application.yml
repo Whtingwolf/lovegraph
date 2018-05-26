@@ -4,4 +4,4 @@ server:
     context-path: /lovegraph
 spring:
   resources:
-    static-locations: /**
+    static-locations: classpath:/img
