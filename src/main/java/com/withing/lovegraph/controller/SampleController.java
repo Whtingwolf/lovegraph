@@ -9,10 +9,10 @@ import org.springframework.web.bind.annotation.RestController;
 
 @Controller
 public class SampleController {
-
-    @RequestMapping("/indexPage")
-     public String indexPage(){
-        System.out.println("I'm indexPage");
+    @RequestMapping("/index")
+    public String indexPage(){
         return "index";
     }
+
 }
+    

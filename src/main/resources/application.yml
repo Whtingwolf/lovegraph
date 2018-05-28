@@ -3,5 +3,6 @@ server:
   servlet:
     context-path: /lovegraph
 spring:
-  resources:
-    static-locations: classpath:/img
+  thymeleaf:
+    prefix: classpath:/static/
+    suffix: .html
