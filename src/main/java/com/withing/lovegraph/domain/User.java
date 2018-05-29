@@ -1,6 +1,7 @@
 package com.withing.lovegraph.domain;
 
 public class User {
+    private String userID;
     private String username;
     private String password;
     private String numberphone;
@@ -11,7 +12,16 @@ public class User {
         return username;
     }
 
+    public String getUserID ( ) {
+        return userID;
+    }
+
+    public void setUserID (String userID) {
+        this.userID = userID;
+    }
+
     public String getPassword ( ) {
+
         return password;
     }
 
