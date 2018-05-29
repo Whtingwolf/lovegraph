@@ -9,12 +9,12 @@ import java.util.List;
 import java.util.Map;
 
 @RestController
-public class DatabaseControll {
+public class DatabaseController {
     @Autowired
     JdbcTemplate jdbcTemplate;
     @RequestMapping(value = "getUser")
     public List<Map<String,Object>> getUser(){
-        String sql  = "select * from lovegragh_user";
+        String sql  = "select * from lovegraph_user";
         List<Map<String,Object>> list = jdbcTemplate.queryForList(sql);
         return list;
     }

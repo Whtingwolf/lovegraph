@@ -5,6 +5,7 @@ public class User {
     private String username;
     private String password;
     private String numberphone;
+
     public User ( ) {
     }
 
@@ -16,8 +17,9 @@ public class User {
         return userID;
     }
 
-    public void setUserID (String userID) {
+    public User setUserID (String userID) {
         this.userID = userID;
+        return this;
     }
 
     public String getPassword ( ) {
@@ -29,15 +31,18 @@ public class User {
         return numberphone;
     }
 
-    public void setUsername (String username) {
+    public User setUsername (String username) {
         this.username = username;
+        return this;
     }
 
-    public void setPassword (String password) {
+    public User setPassword (String password) {
         this.password = password;
+        return this;
     }
 
-    public void setNumberphone (String numberphone) {
+    public User setNumberphone (String numberphone) {
         this.numberphone = numberphone;
+        return this;
     }
 }
