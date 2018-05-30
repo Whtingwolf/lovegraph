@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.List;
+import java.util.stream.Stream;
 
 @Service
 public class UserServiceImpl implements UserService {
@@ -20,23 +21,12 @@ public class UserServiceImpl implements UserService {
     @Override
     public User findUserById (long id) {
         String sql = "select * from lovegraph_user where t_id = "+id;
-        User user = (User)jdbcTemplate.queryForObject(sql, new RowMapper <User>() {
-            @Override
-            public User mapRow (ResultSet rs, int rowNum) throws SQLException {
-                    return  new User()
+        User user = jdbcTemplate.queryForObject(sql,(rs, rowNum) ->
+                        new User()
                 .setUsername(rs.getString("t_username"))
                 .setUserID(rs.getString("t_id"))
-                .setNumberphone(rs.getString("t_numberphone"));
-
-            }
-        });
-        System.out.println(user==null);
-//        User user = jdbcTemplate.queryForObject(sql,(rs, rowNum) ->
-//                new User()
-//                .setUsername(rs.getString("t_username"))
-//                .setUserID(rs.getString("t_id"))
-//                .setNumberphone(rs.getString("t_numberphont"))
-//        );
+                .setNumberphone(rs.getString("t_numberphone"))
+        );
         return user;
     }
 
