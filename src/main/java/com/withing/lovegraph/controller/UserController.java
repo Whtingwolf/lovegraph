@@ -16,7 +16,7 @@ public class UserController {
     UserService userService;
 
     @RequestMapping(value = "/getUserById")
-    public Object getUserById(){
-        return userService.findUserById(100000);
+    public Object getUserById(@RequestParam("id")long id){
+        return userService.findUserById(id);
     }
 }
