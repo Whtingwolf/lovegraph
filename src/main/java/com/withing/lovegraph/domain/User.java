@@ -1,9 +1,24 @@
 package com.withing.lovegraph.domain;
 
+import javax.persistence.*;
+
+@Entity
+@Table(name = "lovegraph_user")
 public class User {
+    private static final long serialVersionUID = 8127035730921338189L;
+
+    @Id
+    @GeneratedValue
+    @Column(name = "T_ID")
     private String userID;
+
+    @Column(name = "T_USERNAME")
     private String username;
+
+    @Column(name = "T_PASSWORD")
     private String password;
+
+    @Column(name = "T_NUMBERPHONE")
     private String numberphone;
 
     public User ( ) {
